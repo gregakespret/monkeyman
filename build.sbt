@@ -4,7 +4,7 @@ name := "monkeyman"
 
 version := "0.3"
 
-scalaVersion := "2.9.2"
+scalaVersion := "2.10.3"
 
 libraryDependencies ++= Seq(
   "org.pegdown" % "pegdown" % "1.1.0",
@@ -13,8 +13,8 @@ libraryDependencies ++= Seq(
   "eu.medsea.mimeutil" % "mime-util" % "2.1.3" intransitive,
   "commons-io" % "commons-io" % "2.4",
   "org.joda" % "joda-convert" % "1.2",
-  "org.fusesource.scalate" % "scalate-core" % "1.5.3",
-  "org.clapper" %% "argot" % "0.4",
+  "org.fusesource.scalate" %% "scalate-core" % "1.6.1",
+  "org.clapper" %% "argot" % "1.0.1",
   "com.ibm.icu" % "icu4j" % "4.8.1.1",
   "ch.qos.logback" % "logback-core" % "1.0.0",
   "ch.qos.logback" % "logback-classic" % "1.0.0",

@@ -27,14 +27,14 @@ class ResourceGenerator(listener: ResourceListener, fn: (Resource) => List[Resou
   private val memory = Map.empty[String, List[Resource]]
 
   def deleted(id: String) {
-    for (resource <- memory.get(id).flatten) {
+    for (resources <- memory.get(id); resource <- resources) {
       listener.deleted(id)
     }
   }
 
   def modified(resource: Resource) {
     val resources = fn(resource)
-    for (prev <- memory.get(resource.id).flatten) listener.deleted(prev.id)
+    for (resources <- memory.get(resource.id); prev <- resources) listener.deleted(prev.id)
     if (resources.isEmpty) {
       memory -= resource.id
     } else {
